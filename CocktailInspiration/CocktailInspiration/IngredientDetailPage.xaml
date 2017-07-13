@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CocktailInspiration.IngredientDetailPage">
+    <ContentPage.Content>
+
+        <StackLayout x:Name="sty_Main">
+            <Picker x:Name="pck_Ingredients" Title="Select an Ingredient" SelectedItem="{Binding Ingredient}" ItemDisplayBinding="{Binding Name}" ></Picker>
+
+            <!--<Label x:Name="lbl_Name" Text="{Binding Ingredient.Name}" />-->
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="ent_Quantity" Text="{Binding AvailableQuantity}"></Entry>
+                <Label x:Name="lbl_Unit" Text="{Binding Ingredient.Unit}"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

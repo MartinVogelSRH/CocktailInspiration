@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CocktailInspiration.TechnicalPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="btn_AddData" Text="Add Sample Data" Clicked="btn_AddData_Clicked"></Button>
+            <Button x:Name="btn_DropDatabase" Text="Drop and Rebuild DB" Clicked="btn_DropDatabase_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

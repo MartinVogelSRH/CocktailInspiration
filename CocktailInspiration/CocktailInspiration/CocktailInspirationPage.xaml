@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CocktailInspiration.CocktailInspirationPage"
+             xmlns:local="clr-namespace:CocktailInspiration"
+             Title="Cocktail Inspiration"
+             Icon="Cocktail_Icon"
+             x:Name="cpg_CocktailInspiration">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lview_Cocktails" ItemTapped="lview_Cocktails_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding CocktailName}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Label x:Name="lbl_Test" Text="Welcome to the Cocktail Inspiration page!" />
+            <Button x:Name="btn_LoadMasterDetail" Text="Go to Master Detail" Clicked="btn_LoadMasterDetail_Clicked"></Button>
+            <Button x:Name="btn_LoadTabbedPage" Text="Go to tabbed page" Clicked="btn_LoadTabbedPage_Clicked"></Button>
+            <!--<Button x:Name="btn_LoadToolbarNav" Text="Go to toolbar Navigation" Clicked="btn_LoadToolbarNav_Clicked"></Button>-->
+        </StackLayout>
+        
+    </ContentPage.Content>
+
+</ContentPage>

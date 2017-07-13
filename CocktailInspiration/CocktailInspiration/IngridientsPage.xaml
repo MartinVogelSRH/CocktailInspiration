@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CocktailInspiration.IngridientsPage"
+             Title="Ingredients"
+             Icon="Ingredients">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="btn_AddIngr" Text="Add" Clicked="btn_AddIngr_Clicked"></Button>
+            <ListView x:Name="lview_Ingredients" ItemTapped="lview_Ingredients_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell x:Name="lbl_AvailableQty" Text="{Binding Ingredient.Name}" Detail="{Binding AvailableQuantity}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

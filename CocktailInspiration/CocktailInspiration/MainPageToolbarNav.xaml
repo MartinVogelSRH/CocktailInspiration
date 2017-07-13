@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CocktailInspiration.MainPageToolbarNav"
+             xmlns:local="clr-namespace:CocktailInspiration">
+
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin Forms!" />
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="tbi_Inspiration" Text="Cocktail Inspiration" Icon="Cocktail_Icon.png" Clicked="tbi_Inspiration_Clicked" ></ToolbarItem>
+        <ToolbarItem x:Name="tbi_Ingredient" Text="Ingredient" Icon="Ingredients.png" Clicked="tbi_Ingredient_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="tbi_Favorites" Text="Favorites" Icon="FavoriteIcon.png" Clicked="tbi_Favorites_Clicked"></ToolbarItem>
+        <!--<ToolbarItem x:Name="tbi_Account" Text="Account" Icon="AccountIcon.png" Clicked="tbi_Account_Clicked"></ToolbarItem>-->
+    </ContentPage.ToolbarItems>
+</ContentPage>

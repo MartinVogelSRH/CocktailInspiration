@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CocktailInspiration"
+             x:Class="CocktailInspiration.MainPage">
+    <!--<TabbedPage.ToolbarItems>
+        <local:CocktailInspirationPage />
+        <local:IngridientsPage />
+        <ToolbarItem>
+            <local:FavoritesPage />
+        </ToolbarItem>
+        <ToolbarItem>
+            <local:AccountPage />
+        </ToolbarItem>
+    </TabbedPage.ToolbarItems>-->
+    <!--THIS PAGE IS CURRENTLY NOT USED!-->
+    <local:CocktailInspirationPage />
+    <local:IngridientsPage />
+    <local:FavoritesPage />
+    <local:AccountPage />
+
+</TabbedPage>

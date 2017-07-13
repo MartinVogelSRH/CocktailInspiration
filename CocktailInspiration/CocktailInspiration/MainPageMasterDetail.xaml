@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CocktailInspiration.MainPageMasterDetail"
+             xmlns:pages="clr-namespace:CocktailInspiration">
+  <MasterDetailPage.Master>
+    <pages:MainPageMasterDetailMaster x:Name="MasterPage" />
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:CocktailInspirationPage />
+      </x:Arguments>
+    </NavigationPage>
+        <!--<NavigationPage>
+            <x:Arguments>
+                <pages:IngridientsPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:FavoritesPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:AccountPage />
+            </x:Arguments>
+        </NavigationPage>-->
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

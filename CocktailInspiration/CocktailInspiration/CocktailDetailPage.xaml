@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CocktailInspiration.CocktailDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding CocktailName}" />
+            <Label HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" Text="{Binding Instructions}"></Label>
+            <ListView ItemsSource="{Binding NeededIngredients}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Ingredient.Name}" Detail="{Binding AvailableQuantity}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
