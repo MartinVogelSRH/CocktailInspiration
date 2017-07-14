@@ -5,13 +5,14 @@
     <ContentPage.Content>
 
         <StackLayout x:Name="sty_Main">
-            <Picker x:Name="pck_Ingredients" Title="Select an Ingredient" SelectedItem="{Binding Ingredient}" ItemDisplayBinding="{Binding Name}" ></Picker>
+            <Picker x:Name="pck_Ingredients" Title="Select an Ingredient" ItemDisplayBinding="{Binding Name}" ></Picker>
 
             <!--<Label x:Name="lbl_Name" Text="{Binding Ingredient.Name}" />-->
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="ent_Quantity" Text="{Binding AvailableQuantity}"></Entry>
-                <Label x:Name="lbl_Unit" Text="{Binding Ingredient.Unit}"></Label>
+                <Entry x:Name="ent_Quantity" Text="{Binding AvailableQuantity, Mode=TwoWay}"></Entry>
+                <Label x:Name="lbl_Unit" Text="{Binding Ingredient.Unit, Mode=TwoWay}"></Label>
             </StackLayout>
+            <Button x:Name="btn_Save" Text="Save" Clicked="btn_Save_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

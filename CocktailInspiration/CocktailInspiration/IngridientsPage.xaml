@@ -6,15 +6,27 @@
              Icon="Ingredients">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="5">
             <Button x:Name="btn_AddIngr" Text="Add" Clicked="btn_AddIngr_Clicked"></Button>
-            <ListView x:Name="lview_Ingredients" ItemTapped="lview_Ingredients_ItemTapped">
+            <ListView x:Name="lview_Ingredients" ItemTapped="lview_Ingredients_ItemTapped" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell x:Name="lbl_AvailableQty" Text="{Binding Ingredient.Name}" Detail="{Binding AvailableQuantity}"></TextCell>
+                        <ViewCell>
+                            <Frame OutlineColor="Black" CornerRadius="3" BackgroundColor="LightGray" HasShadow="True" Margin="3">
+                                <StackLayout>
+                                    <Label Text="{Binding Ingredient.Type}"></Label>
+                                    <Label x:Name="lbl_IngName" Text="{Binding Ingredient.Name}"></Label>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="lbl_AvailableQty" Text="{Binding AvailableQuantity}"></Label>
+                                        <Label x:Name="lbl_Unit" Text="{Binding Ingredient.Unit}"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

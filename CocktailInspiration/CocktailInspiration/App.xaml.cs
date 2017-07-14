@@ -22,6 +22,10 @@ namespace CocktailInspiration
 			//MainPage = new MainPage();
 			_db = new DatabaseContext();
 			_db.Database.EnsureCreated();
+            if (_db.Recipes.ToList().Count == 0)
+            {
+                Testing.DataTests.GenerateData();
+            }
 		}
 
 		protected override void OnStart()

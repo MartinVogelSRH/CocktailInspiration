@@ -9,24 +9,25 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lview_Cocktails" ItemTapped="lview_Cocktails_ItemTapped">
+            <ListView x:Name="lview_Cocktails" ItemTapped="lview_Cocktails_ItemTapped" HasUnevenRows="True" Margin="5" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding CocktailName}"></Label>
-                            </StackLayout>
+                            <Frame OutlineColor="Black" CornerRadius="3" BackgroundColor="LightGray" HasShadow="True" Margin="3">
+                                <StackLayout>
+                                    <Label Text="{Binding CocktailName}"></Label>
+                                </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
-            <Label x:Name="lbl_Test" Text="Welcome to the Cocktail Inspiration page!" />
+
             <Button x:Name="btn_LoadMasterDetail" Text="Go to Master Detail" Clicked="btn_LoadMasterDetail_Clicked"></Button>
             <Button x:Name="btn_LoadTabbedPage" Text="Go to tabbed page" Clicked="btn_LoadTabbedPage_Clicked"></Button>
             <!--<Button x:Name="btn_LoadToolbarNav" Text="Go to toolbar Navigation" Clicked="btn_LoadToolbarNav_Clicked"></Button>-->
         </StackLayout>
-        
+
     </ContentPage.Content>
 
 </ContentPage>

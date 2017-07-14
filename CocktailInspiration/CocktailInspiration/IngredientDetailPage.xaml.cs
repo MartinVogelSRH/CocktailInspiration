@@ -26,14 +26,19 @@ namespace CocktailInspiration
         public IngredientDetailPage()
         {
             InitializeComponent();
-            //this.BindingContext = new Ingredients() { Name = "Test name" };
+            
             this.BindingContext = new IngredientQuantity()
             {
-                Ingredient = new Ingredients() { Name = "TestName", Type = IngredientTypes.Alcoholic },
-                AvailableQuantity = 5
             };
             pck_Ingredients.ItemsSource = App._db.Ingredients.ToList();
+            pck_Ingredients.IsEnabled = true;
+            Binding bindIngredient = new Binding("Ingredient");
+            pck_Ingredients.SetBinding(Picker.SelectedItemProperty, bindIngredient);
 
+        }
+
+        private void btn_Save_Clicked(object sender, EventArgs e)
+        {
 
         }
     }

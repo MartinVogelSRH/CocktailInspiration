@@ -1,4 +1,5 @@
 ﻿using CocktailInspiration.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,9 @@ namespace CocktailInspiration
 		public IngridientsPage ()
 		{
 			InitializeComponent ();
-            lview_Ingredients.ItemsSource = App._db.IngredientQuantity.Where(x => x.Cocktail == null).ToList();
+            lview_Ingredients.ItemsSource = App._db.IngredientQuantity.Where(x => x.Cocktail == null)
+                .Include(x => x.Ingredient)
+                .ToList();
         }
 
         private void btn_AddIngr_Clicked(object sender, EventArgs e)
