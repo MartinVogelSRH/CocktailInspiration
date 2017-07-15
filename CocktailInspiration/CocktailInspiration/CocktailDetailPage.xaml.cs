@@ -13,10 +13,19 @@ namespace CocktailInspiration
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CocktailDetailPage : ContentPage
 	{
+        Recipes _cocktail;
 		public CocktailDetailPage (Recipes cocktail)
 		{
 			InitializeComponent ();
-            this.BindingContext = cocktail;
+            _cocktail = cocktail;
+            this.BindingContext = _cocktail;
 		}
-	}
+
+        private void btn_Favorite_Clicked(object sender, EventArgs e)
+        {
+            _cocktail.Favorite = !_cocktail.Favorite;
+            App._db.Recipes.Update(_cocktail);
+            App._db.SaveChanges();
+        }
+    }
 }

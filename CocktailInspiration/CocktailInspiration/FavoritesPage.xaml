@@ -6,7 +6,24 @@
              Icon="FavoriteIcon">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to the Favorites Page!" />
+            <ListView x:Name="lview_Cocktails" ItemTapped="lview_Cocktails_ItemTapped" HasUnevenRows="True" Margin="5" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame OutlineColor="Black" CornerRadius="3" BackgroundColor="LightGray" HasShadow="True" Margin="3">
+                                <StackLayout>
+                                    <Label Text="{Binding CocktailName}"></Label>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Rating:"></Label>
+                                        <Label Text="{Binding Rating}"></Label>
+                                        <Label Text="/5"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

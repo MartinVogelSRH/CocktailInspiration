@@ -9,6 +9,7 @@
         <StackLayout Padding="5">
             <Button x:Name="btn_AddIngr" Text="Add" Clicked="btn_AddIngr_Clicked"></Button>
             <ListView x:Name="lview_Ingredients" ItemTapped="lview_Ingredients_ItemTapped" HasUnevenRows="True">
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

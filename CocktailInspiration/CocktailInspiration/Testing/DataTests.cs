@@ -54,7 +54,7 @@ namespace CocktailInspiration.Testing
                         AvailableQuantity = 0.3
                     }
                 },
-                Instructions = "Put Wodka in the glass, then put coke in the glass. Stir it around",
+                Instructions = "1. Put Wodka in the glass.\r\n2. Put coke in the glass.\r\n3. Stir it around",
                 Rating = 3.5
             };
             

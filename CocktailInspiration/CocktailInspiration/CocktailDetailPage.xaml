@@ -1,19 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CocktailInspiration.CocktailDetailPage">
+             x:Class="CocktailInspiration.CocktailDetailPage" Title="{Binding CocktailName}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding CocktailName}" />
-            <Label HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" Text="{Binding Instructions}"></Label>
-            <ListView ItemsSource="{Binding NeededIngredients}">
+        <StackLayout Padding="3" VerticalOptions="Start">
+            <StackLayout Orientation="Horizontal">
+                <!--<Label Text="{Binding CocktailName}" />-->
+                <Button x:Name="btn_Favorite" Text="Add to Favorites" Clicked="btn_Favorite_Clicked" ></Button>
+                <Switch x:Name="swi_Favorite" IsToggled="{Binding Favorite, Mode=TwoWay}"></Switch>
+            </StackLayout>
+            <Label Text="IMAGE PLACEHOLDER" HorizontalOptions="Center"></Label>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Rating:"></Label>
+                <Label Text="{Binding Rating}"></Label>
+                <Label Text="/5"></Label>
+            </StackLayout>
+            <ListView ItemsSource="{Binding NeededIngredients}" >
+                <ListView.Header>
+                    <Label Text="Ingredients" FontSize="Large"></Label>
+                </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Ingredient.Name}" Detail="{Binding AvailableQuantity}"></TextCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <!--<StackLayout Orientation="Horizontal">-->
+                                <Label Text="{Binding AvailableQuantity}"></Label>
+                                <Label Text="{Binding Ingredient.Unit}"></Label>
+                                <!--</StackLayout>-->
+                                <Label Text="{Binding Ingredient.Name}"></Label>
+                                <!--<TextCell Text="{Binding Ingredient.Name}" Detail="{Binding AvailableQuantity}"></TextCell>-->
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <StackLayout >
+                        <Label Text="Instructions:" FontSize="Large"></Label>
+                        <Label HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" Text="{Binding Instructions}"></Label>
+                    </StackLayout>
+                </ListView.Footer>
             </ListView>
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

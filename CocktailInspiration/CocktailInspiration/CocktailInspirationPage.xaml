@@ -16,6 +16,11 @@
                             <Frame OutlineColor="Black" CornerRadius="3" BackgroundColor="LightGray" HasShadow="True" Margin="3">
                                 <StackLayout>
                                     <Label Text="{Binding CocktailName}"></Label>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Rating:"></Label>
+                                        <Label Text="{Binding Rating}"></Label>
+                                        <Label Text="/5"></Label>
+                                    </StackLayout>
                                 </StackLayout>
                             </Frame>
                         </ViewCell>

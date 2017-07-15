@@ -39,7 +39,16 @@ namespace CocktailInspiration
 
         private void btn_Save_Clicked(object sender, EventArgs e)
         {
-
+            IngredientQuantity currentIngredient = (IngredientQuantity)this.BindingContext;
+            if (currentIngredient.IngredientQuantityID == 0)
+            {
+                App._db.IngredientQuantity.Add(currentIngredient);
+            }
+            else
+            {
+                App._db.IngredientQuantity.Update(currentIngredient);
+            }
+            App._db.SaveChanges();
         }
     }
 }

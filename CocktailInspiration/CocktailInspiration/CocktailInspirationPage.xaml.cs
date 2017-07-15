@@ -1,4 +1,5 @@
 ﻿using CocktailInspiration.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,10 @@ namespace CocktailInspiration
         protected override void OnAppearing()
         {
 
-            lview_Cocktails.ItemsSource = App._db.Recipes.ToList();
+            lview_Cocktails.ItemsSource = App._db.Recipes
+                .Include(x => x.NeededIngredients)
+                .ThenInclude(x => x.Ingredient)
+                .ToList();
             base.OnAppearing();
             
         }
