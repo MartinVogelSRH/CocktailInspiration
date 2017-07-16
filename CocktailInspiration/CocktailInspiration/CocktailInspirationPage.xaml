@@ -13,7 +13,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame OutlineColor="Black" CornerRadius="3" BackgroundColor="LightGray" HasShadow="True" Margin="3">
+                            <Frame>
                                 <StackLayout>
                                     <Label Text="{Binding CocktailName}"></Label>
                                     <StackLayout Orientation="Horizontal">

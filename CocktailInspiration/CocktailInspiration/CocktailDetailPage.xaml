@@ -15,7 +15,7 @@
                 <Label Text="{Binding Rating}"></Label>
                 <Label Text="/5"></Label>
             </StackLayout>
-            <ListView ItemsSource="{Binding NeededIngredients}" >
+            <ListView ItemsSource="{Binding NeededIngredients}"  >
                 <ListView.Header>
                     <Label Text="Ingredients" FontSize="Large"></Label>
                 </ListView.Header>

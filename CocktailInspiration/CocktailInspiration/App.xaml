@@ -5,6 +5,13 @@
 	<Application.Resources>
         <ResourceDictionary>
             <x:String x:Key="appName">Cocktail Inspiration</x:String>
+            <Style TargetType="Frame">
+                <Setter Property="OutlineColor" Value="Black" />
+                <Setter Property="CornerRadius" Value="3" />
+                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="Margin" Value="3" />
+            </Style>
         </ResourceDictionary>
 		<!-- Application resource dictionary -->
 

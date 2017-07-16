@@ -8,12 +8,14 @@
     <ContentPage.Content>
         <StackLayout Padding="5">
             <Button x:Name="btn_AddIngr" Text="Add" Clicked="btn_AddIngr_Clicked"></Button>
-            <ListView x:Name="lview_Ingredients" ItemTapped="lview_Ingredients_ItemTapped" HasUnevenRows="True">
-
+            <ListView x:Name="lview_Ingredients" ItemTapped="lview_Ingredients_ItemTapped" HasUnevenRows="True"
+                      GroupDisplayBinding="{Binding Key}"
+                      GroupShortNameBinding="{Binding Key}"
+                      IsGroupingEnabled="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame OutlineColor="Black" CornerRadius="3" BackgroundColor="LightGray" HasShadow="True" Margin="3">
+                            <Frame>
                                 <StackLayout>
                                     <Label Text="{Binding Ingredient.Type}"></Label>
                                     <Label x:Name="lbl_IngName" Text="{Binding Ingredient.Name}"></Label>

@@ -109,6 +109,37 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AccountIcon.png" />
+    <Content Include="CocktailPictures\bellini.jpg" />
+    <Content Include="CocktailPictures\black_russian.jpg" />
+    <Content Include="CocktailPictures\bloody_mary.jpg" />
+    <Content Include="CocktailPictures\caipirinha.jpg" />
+    <Content Include="CocktailPictures\champagne_cocktail.jpg" />
+    <Content Include="CocktailPictures\cosmopolitan.jpg" />
+    <Content Include="CocktailPictures\cuba_libre.jpg" />
+    <Content Include="CocktailPictures\french75.jpg" />
+    <Content Include="CocktailPictures\french_connection.jpg" />
+    <Content Include="CocktailPictures\godfather.jpg" />
+    <Content Include="CocktailPictures\godmother.jpg" />
+    <Content Include="CocktailPictures\golden_dream.jpg" />
+    <Content Include="CocktailPictures\grasshopper.jpg" />
+    <Content Include="CocktailPictures\harvey_wallbanger.jpg" />
+    <Content Include="CocktailPictures\hemingway_special.jpg" />
+    <Content Include="CocktailPictures\horse_neck.jpg" />
+    <Content Include="CocktailPictures\irish_coffee.jpg" />
+    <Content Include="CocktailPictures\kir.jpg" />
+    <Content Include="CocktailPictures\long_island_tea.jpg" />
+    <Content Include="CocktailPictures\mai_tai.jpg" />
+    <Content Include="CocktailPictures\margarita.jpg" />
+    <Content Include="CocktailPictures\mimosa.jpg" />
+    <Content Include="CocktailPictures\mint_julep.jpg" />
+    <Content Include="CocktailPictures\mojito.jpg" />
+    <Content Include="CocktailPictures\moscow_mule.jpg" />
+    <Content Include="CocktailPictures\pina_colada.jpg" />
+    <Content Include="CocktailPictures\rose.jpg" />
+    <Content Include="CocktailPictures\sea_breeze.jpg" />
+    <Content Include="CocktailPictures\sex_on_beach.jpg" />
+    <Content Include="CocktailPictures\singapore_sling.jpg" />
+    <Content Include="CocktailPictures\tequila_sunrise.jpg" />
     <Content Include="Cocktail_Icon.png" />
     <Content Include="FavoriteIcon.png" />
     <Content Include="Ingredients.png" />
@@ -151,6 +182,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

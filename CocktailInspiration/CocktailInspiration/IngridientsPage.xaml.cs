@@ -17,9 +17,12 @@ namespace CocktailInspiration
 		public IngridientsPage ()
 		{
 			InitializeComponent ();
-            lview_Ingredients.ItemsSource = App._db.IngredientQuantity.Where(x => x.Cocktail == null)
+            List<IGrouping<IngredientTypes, IngredientQuantity>> groupedIngredients = App._db.IngredientQuantity.Where(x => x.Cocktail == null)
                 .Include(x => x.Ingredient)
+                .GroupBy(x => x.Ingredient.Type)
                 .ToList();
+            lview_Ingredients.ItemsSource = groupedIngredients;
+
         }
 
         private void btn_AddIngr_Clicked(object sender, EventArgs e)

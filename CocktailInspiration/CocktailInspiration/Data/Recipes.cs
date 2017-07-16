@@ -7,18 +7,29 @@ namespace CocktailInspiration.Data
 {
     public class Recipes : INotifyPropertyChanged 
     {
+
+        private bool privFavorite;
+        private double privRating;
+
         public int ID { get; set; }
         public string CocktailName { get; set; }
         public List<IngredientQuantity> NeededIngredients { get; set; }
         public string Instructions { get; set; }
-        public double Rating { get; set; }
-        private bool fav;
-        public bool Favorite
+        public double Rating
         {
-            get { return fav; }
+            get { return privRating; }
             set
             {
-                fav = value;
+                privRating = value;
+                OnPropertyChanged("Rating");
+            }
+        }
+        public bool Favorite
+        {
+            get { return privFavorite; }
+            set
+            {
+                privFavorite = value;
                 OnPropertyChanged("Favorite");
             }
         }
