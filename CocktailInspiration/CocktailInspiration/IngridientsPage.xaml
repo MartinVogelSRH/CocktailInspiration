@@ -20,7 +20,7 @@
                                     <Label Text="{Binding Ingredient.Type}"></Label>
                                     <Label x:Name="lbl_IngName" Text="{Binding Ingredient.Name}"></Label>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label x:Name="lbl_AvailableQty" Text="{Binding AvailableQuantity}"></Label>
+                                        <Label x:Name="lbl_AvailableQty" Text="{Binding Quantity}"></Label>
                                         <Label x:Name="lbl_Unit" Text="{Binding Ingredient.Unit}"></Label>
                                     </StackLayout>
                                 </StackLayout>

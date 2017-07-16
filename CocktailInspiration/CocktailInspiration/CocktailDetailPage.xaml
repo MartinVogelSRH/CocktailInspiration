@@ -1,19 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CocktailInspiration.CocktailDetailPage" Title="{Binding CocktailName}">
+             x:Class="CocktailInspiration.CocktailDetailPage" 
+             Title="{Binding CocktailName}">
     <ContentPage.Content>
-        <StackLayout Padding="3" VerticalOptions="Start">
-            <StackLayout Orientation="Horizontal">
-                <!--<Label Text="{Binding CocktailName}" />-->
-                <Button x:Name="btn_Favorite" Text="Add to Favorites" Clicked="btn_Favorite_Clicked" ></Button>
-                <Switch x:Name="swi_Favorite" IsToggled="{Binding Favorite, Mode=TwoWay}"></Switch>
-            </StackLayout>
-            <Label Text="IMAGE PLACEHOLDER" HorizontalOptions="Center"></Label>
+        <StackLayout Padding="3" VerticalOptions="Start" HorizontalOptions="Start">
+            <!--<StackLayout VerticalOptions="Start" Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="Blue">-->
+            <Button x:Name="btn_Favorite" Clicked="btn_Favorite_Clicked" BorderColor="Transparent" BackgroundColor="Transparent" BorderWidth="0" BorderRadius="0" HorizontalOptions="End">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button"
+                                     Binding="{Binding Favorite}"
+                                     Value="false">
+                        <Setter Property="Image" Value="Favorite_empty.png" />
+                    </DataTrigger>
+                    <DataTrigger TargetType="Button"
+                                     Binding="{Binding Favorite}"
+                                     Value="true">
+                        <Setter Property="Image" Value="Favorite_filled.png" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+            <Image Source="{Binding Picture}" HeightRequest="100" Aspect="AspectFit" HorizontalOptions="Center"></Image>
+
+            <!--</StackLayout>-->
+
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Rating:"></Label>
                 <Label Text="{Binding Rating}"></Label>
                 <Label Text="/5"></Label>
+                
             </StackLayout>
             <ListView ItemsSource="{Binding NeededIngredients}"  >
                 <ListView.Header>
@@ -24,11 +39,11 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
                                 <!--<StackLayout Orientation="Horizontal">-->
-                                <Label Text="{Binding AvailableQuantity}"></Label>
+                                <Label Text="{Binding Quantity}"></Label>
                                 <Label Text="{Binding Ingredient.Unit}"></Label>
                                 <!--</StackLayout>-->
                                 <Label Text="{Binding Ingredient.Name}"></Label>
-                                <!--<TextCell Text="{Binding Ingredient.Name}" Detail="{Binding AvailableQuantity}"></TextCell>-->
+                                <!--<TextCell Text="{Binding Ingredient.Name}" Detail="{Binding Quantity}"></TextCell>-->
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -40,6 +55,8 @@
                     </StackLayout>
                 </ListView.Footer>
             </ListView>
+                
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

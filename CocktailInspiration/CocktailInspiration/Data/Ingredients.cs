@@ -32,7 +32,6 @@ namespace CocktailInspiration.Data
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        //public IngredientQuantity AvailableQuantity { get; set; }
         protected void OnPropertyChanged(string name)
         {
             PropertyChangedEventHandler handler = PropertyChanged;

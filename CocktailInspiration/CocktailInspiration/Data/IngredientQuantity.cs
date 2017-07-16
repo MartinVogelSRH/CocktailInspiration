@@ -20,13 +20,13 @@ namespace CocktailInspiration.Data
                 OnPropertyChanged("Ingredient");
             }
         }
-        public double AvailableQuantity
+        public double Quantity
         {
             get { return privQuantity; }
             set
             {
                 privQuantity = value;
-                OnPropertyChanged("AvailableQuantity");
+                OnPropertyChanged("Quantity");
             }
         }
         public Recipes Cocktail { get; set; }

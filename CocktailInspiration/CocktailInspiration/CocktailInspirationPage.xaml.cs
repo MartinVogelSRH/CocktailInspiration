@@ -47,6 +47,16 @@ namespace CocktailInspiration
 
         }
 
+        private void sw_Possible_Toggled(object sender, ToggledEventArgs e)
+        {
+            
+        }
+
+        private void sw_Possible_OnChanged(object sender, ToggledEventArgs e)
+        {
+
+        }
+
 
 
         //private async void btn_LoadToolbarNav_Clicked(object sender, EventArgs e)

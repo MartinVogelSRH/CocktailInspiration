@@ -14,6 +14,7 @@ namespace CocktailInspiration.Data
         public int ID { get; set; }
         public string CocktailName { get; set; }
         public List<IngredientQuantity> NeededIngredients { get; set; }
+        public string Picture { get; set; }
         public string Instructions { get; set; }
         public double Rating
         {

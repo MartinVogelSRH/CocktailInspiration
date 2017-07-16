@@ -9,17 +9,25 @@
 
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Show only possible Cocktails?"></Label>
+                <Switch x:Name="sw_Possible" Toggled="sw_Possible_Toggled"></Switch>
+                <Label Text="Show all Cocktails"></Label>
+            </StackLayout>
             <ListView x:Name="lview_Cocktails" ItemTapped="lview_Cocktails_ItemTapped" HasUnevenRows="True" Margin="5" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Frame>
-                                <StackLayout>
-                                    <Label Text="{Binding CocktailName}"></Label>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Rating:"></Label>
-                                        <Label Text="{Binding Rating}"></Label>
-                                        <Label Text="/5"></Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Picture}" WidthRequest="50" HeightRequest="10" Aspect="AspectFit" HorizontalOptions="Start"></Image>
+                                    <StackLayout>
+                                        <Label Text="{Binding CocktailName}"></Label>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Rating:"></Label>
+                                            <Label Text="{Binding Rating}"></Label>
+                                            <Label Text="/5"></Label>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>

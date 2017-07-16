@@ -49,6 +49,7 @@ namespace CocktailInspiration
                 App._db.IngredientQuantity.Update(currentIngredient);
             }
             App._db.SaveChanges();
+            Navigation.PopModalAsync();
         }
     }
 }

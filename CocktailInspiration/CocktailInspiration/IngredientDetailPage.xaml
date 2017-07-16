@@ -9,7 +9,7 @@
 
             <!--<Label x:Name="lbl_Name" Text="{Binding Ingredient.Name}" />-->
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="ent_Quantity" Text="{Binding AvailableQuantity, Mode=TwoWay}"></Entry>
+                <Entry x:Name="ent_Quantity" Text="{Binding Quantity, Mode=TwoWay}"></Entry>
                 <Label x:Name="lbl_Unit" Text="{Binding Ingredient.Unit, Mode=TwoWay}"></Label>
             </StackLayout>
             <Button x:Name="btn_Save" Text="Save" Clicked="btn_Save_Clicked"></Button>
