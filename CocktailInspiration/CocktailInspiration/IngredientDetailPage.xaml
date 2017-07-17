@@ -5,12 +5,12 @@
     <ContentPage.Content>
 
         <StackLayout x:Name="sty_Main">
-            <Picker x:Name="pck_Ingredients" Title="Select an Ingredient" ItemDisplayBinding="{Binding Name}" ></Picker>
+            <Picker x:Name="pck_Ingredients" Title="Select an Ingredient" ItemDisplayBinding="{Binding Ingredient.Name}" ></Picker>
 
             <!--<Label x:Name="lbl_Name" Text="{Binding Ingredient.Name}" />-->
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="ent_Quantity" Text="{Binding Quantity, Mode=TwoWay}"></Entry>
-                <Label x:Name="lbl_Unit" Text="{Binding Ingredient.Unit, Mode=TwoWay}"></Label>
+                <Entry x:Name="ent_Quantity" BindingContext="{x:Reference Name=pck_Ingredients}" Text="{Binding SelectedItem.Quantity, Mode=TwoWay}" MinimumWidthRequest=" 20"></Entry>
+                <Label x:Name="lbl_Unit" BindingContext="{x:Reference Name=pck_Ingredients}" Text="{Binding SelectedItem.Ingredient.Unit, Mode=TwoWay}"></Label>
             </StackLayout>
             <Button x:Name="btn_Save" Text="Save" Clicked="btn_Save_Clicked"></Button>
         </StackLayout>

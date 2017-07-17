@@ -22,7 +22,17 @@ namespace CocktailInspiration
                 .GroupBy(x => x.Ingredient.Type)
                 .ToList();
             lview_Ingredients.ItemsSource = groupedIngredients;
+            IngredientQuantity.checkIngredientConsistency();
+        }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            List<IGrouping<IngredientTypes, IngredientQuantity>> groupedIngredients = App._db.IngredientQuantity.Where(x => x.Cocktail == null && x.Quantity != 0)
+                .Include(x => x.Ingredient)
+                .GroupBy(x => x.Ingredient.Type)
+                .ToList();
+            lview_Ingredients.ItemsSource = groupedIngredients;
         }
 
         private void btn_AddIngr_Clicked(object sender, EventArgs e)

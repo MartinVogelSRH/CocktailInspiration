@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 
 namespace CocktailInspiration.Data
@@ -40,5 +41,22 @@ namespace CocktailInspiration.Data
                 handler(this, new PropertyChangedEventArgs(name));
             }
         }
+        public static void checkIngredientConsistency()
+        {
+            List<Ingredients> allIngredients = App._db.Ingredients.ToList();
+            List<Ingredients> ingrWithOutCocktail = App._db.IngredientQuantity.Where(x => x.Cocktail == null).Select(x => x.Ingredient).ToList();
+
+            foreach (Ingredients item in allIngredients.Except(ingrWithOutCocktail).ToList())
+            {
+                IngredientQuantity toAdd = new IngredientQuantity()
+                {
+                    Ingredient = item,
+                    Quantity = 0
+                };
+                App._db.IngredientQuantity.Add(toAdd);
+            }
+            App._db.SaveChanges();
+        }
     }
+
 }

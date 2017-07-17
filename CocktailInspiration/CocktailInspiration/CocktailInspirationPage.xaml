@@ -11,7 +11,7 @@
         <StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Show only possible Cocktails?"></Label>
-                <Switch x:Name="sw_Possible" Toggled="sw_Possible_Toggled"></Switch>
+                <Switch x:Name="sw_Possible" Toggled="sw_Possible_Toggled" IsToggled="True"></Switch>
                 <Label Text="Show all Cocktails"></Label>
             </StackLayout>
             <ListView x:Name="lview_Cocktails" ItemTapped="lview_Cocktails_ItemTapped" HasUnevenRows="True" Margin="5" >

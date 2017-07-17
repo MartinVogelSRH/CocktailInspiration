@@ -8,6 +8,8 @@ using System.Text;
 
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace CocktailInspiration
 {
@@ -16,16 +18,17 @@ namespace CocktailInspiration
 		public static DatabaseContext _db;
 		public App()
 		{
-			InitializeComponent();
-			//MainPage = new NavigationPage(new MainPageMasterDetail());
-			MainPage = new MainPageMasterDetail();
-			//MainPage = new MainPage();
-			_db = new DatabaseContext();
-			_db.Database.EnsureCreated();
+            _db = new DatabaseContext();
+            _db.Database.EnsureCreated();
             if (_db.Recipes.ToList().Count == 0)
             {
                 Testing.DataTests.GenerateData();
             }
+            InitializeComponent();
+			//MainPage = new NavigationPage(new MainPageMasterDetail());
+			MainPage = new MainPageMasterDetail();
+			//MainPage = new MainPage();
+
 		}
 
 		protected override void OnStart()
