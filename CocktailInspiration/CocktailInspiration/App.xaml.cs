@@ -24,6 +24,7 @@ namespace CocktailInspiration
             {
                 Testing.DataTests.GenerateData();
             }
+
             InitializeComponent();
 			//MainPage = new NavigationPage(new MainPageMasterDetail());
 			MainPage = new MainPageMasterDetail();

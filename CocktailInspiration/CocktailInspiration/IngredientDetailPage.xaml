@@ -9,7 +9,7 @@
 
             <!--<Label x:Name="lbl_Name" Text="{Binding Ingredient.Name}" />-->
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="ent_Quantity" BindingContext="{x:Reference Name=pck_Ingredients}" Text="{Binding SelectedItem.Quantity, Mode=TwoWay}" MinimumWidthRequest=" 20"></Entry>
+                <Entry x:Name="ent_Quantity" BindingContext="{x:Reference Name=pck_Ingredients}" Text="{Binding SelectedItem.Quantity, Mode=TwoWay}" WidthRequest="50" Keyboard="Numeric" HorizontalOptions="Start"></Entry>
                 <Label x:Name="lbl_Unit" BindingContext="{x:Reference Name=pck_Ingredients}" Text="{Binding SelectedItem.Ingredient.Unit, Mode=TwoWay}"></Label>
             </StackLayout>
             <Button x:Name="btn_Save" Text="Save" Clicked="btn_Save_Clicked"></Button>

@@ -29,6 +29,7 @@ namespace CocktailInspiration
             
             pck_Ingredients.ItemsSource = App._db.IngredientQuantity
                 .Where(x => x.Cocktail == null && x.Quantity == 0)
+                .OrderBy(x => x.Ingredient.Name)
                 .ToList();
             pck_Ingredients.IsEnabled = true;
             //Binding bindIngredient = new Binding("Ingredient");

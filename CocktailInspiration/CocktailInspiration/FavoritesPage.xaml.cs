@@ -26,12 +26,20 @@ namespace CocktailInspiration
         }
         protected override void OnAppearing()
         {
+            base.OnAppearing();
             lview_Cocktails.ItemsSource = App._db.Recipes
                 .Where(x => x.Favorite == true)
                 .Include(x => x.NeededIngredients)
                 .ThenInclude(x => x.Ingredient)
                 .ToList();
-            base.OnAppearing();
+            if (((List<Recipes>)lview_Cocktails.ItemsSource).Count == 0)
+            {
+                lbl_NoContent.IsVisible = true;
+            }
+            else
+            {
+                lbl_NoContent.IsVisible = false;
+            }
 
         }
     }

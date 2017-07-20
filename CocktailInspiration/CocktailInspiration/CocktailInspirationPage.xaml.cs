@@ -34,10 +34,33 @@ namespace CocktailInspiration
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            lview_Cocktails.ItemsSource = App._db.Recipes
+            getCocktailsToShow();
+            
+        }
+
+        private void getCocktailsToShow()
+        {
+            if (sw_Possible.IsToggled != true)
+            {
+                lview_Cocktails.ItemsSource = CocktailAI.possibleCocktails().OrderBy(x=>x.CocktailName).OrderByDescending(x=>x.Rating).ToList();
+            }
+            else
+            {
+                lview_Cocktails.ItemsSource = App._db.Recipes
                 .Include(x => x.NeededIngredients)
                 .ThenInclude(x => x.Ingredient)
+                .OrderBy(x => x.CocktailName)
+                .OrderByDescending(x => x.Rating)
                 .ToList();
+            }
+            if (((List<Recipes>)lview_Cocktails.ItemsSource).Count == 0)
+            {
+                lbl_NoIngredients.IsVisible = true;
+            }
+            else
+            {
+                lbl_NoIngredients.IsVisible = false;
+            }
         }
 
         private void lview_Cocktails_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -48,17 +71,7 @@ namespace CocktailInspiration
 
         private void sw_Possible_Toggled(object sender, ToggledEventArgs e)
         {
-            if (sw_Possible.IsToggled != true)
-            {
-                lview_Cocktails.ItemsSource = CocktailAI.possibleCocktails();
-            }
-            else
-            {
-                lview_Cocktails.ItemsSource = App._db.Recipes
-                .Include(x => x.NeededIngredients)
-                .ThenInclude(x => x.Ingredient)
-                .ToList();
-            }
+            getCocktailsToShow();
         }
 
 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CocktailInspiration", "CocktailInspiration\CocktailInspiration\CocktailInspiration.shproj", "{D27F04ED-7FF3-4C63-B66D-5BE9D0581B54}"
 EndProject

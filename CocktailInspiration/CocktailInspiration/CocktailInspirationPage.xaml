@@ -11,9 +11,10 @@
         <StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Show only possible Cocktails?"></Label>
-                <Switch x:Name="sw_Possible" Toggled="sw_Possible_Toggled" IsToggled="True"></Switch>
+                <Switch x:Name="sw_Possible" Toggled="sw_Possible_Toggled" IsToggled="False"></Switch>
                 <Label Text="Show all Cocktails"></Label>
             </StackLayout>
+            <Label Text="You have not yet maintained any Ingredients. Therefore, the app can not check, which cocktails can possibly be made. In order to maintain ingredients, please go to the ingredient page. If you do not want to maintain Ingredients at this moment of time, please select to show all cocktails above." IsVisible="False" x:Name="lbl_NoIngredients"></Label>
             <ListView x:Name="lview_Cocktails" ItemTapped="lview_Cocktails_ItemTapped" HasUnevenRows="True" Margin="5" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -35,9 +36,11 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            
+            
 
-            <Button x:Name="btn_LoadMasterDetail" Text="Go to Master Detail" Clicked="btn_LoadMasterDetail_Clicked"></Button>
-            <Button x:Name="btn_LoadTabbedPage" Text="Go to tabbed page" Clicked="btn_LoadTabbedPage_Clicked"></Button>
+            <!--<Button x:Name="btn_LoadMasterDetail" Text="Go to Master Detail" Clicked="btn_LoadMasterDetail_Clicked"></Button>-->
+            <!--<Button x:Name="btn_LoadTabbedPage" Text="Go to tabbed page" Clicked="btn_LoadTabbedPage_Clicked"></Button>-->
             <!--<Button x:Name="btn_LoadToolbarNav" Text="Go to toolbar Navigation" Clicked="btn_LoadToolbarNav_Clicked"></Button>-->
         </StackLayout>
 

@@ -53,6 +53,7 @@ namespace CocktailInspiration.Data
         Centiliter,
         Mililiter,
         Liter,
-        Piece
+        Piece,
+        Gram
     }
 }
